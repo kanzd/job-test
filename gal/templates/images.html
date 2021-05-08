@@ -11,6 +11,16 @@
 <div>
 <a href="{%url "gal:upload"%}"> upload new images </a>
 </div>
+<div>
+
+search By tag:<input type="text" name="tag" id="tag">
+<input type="button" value="search" onclick="search()">
+</div>
+<div>
+ {% if type == "search" %}
+        <a href="/app/images/1">all images</a>
+        {% endif %}
+</div>
     <div>
         {% for i in images %}
         <span>
@@ -24,10 +34,19 @@
     <div>
      {% for i in pages %}
         <span>
-       
+       {% if type == "search" %}
+        <a href="/app/search/{{tag}}/{{i}}">{{i}}</a>
+        {% else %}
         <a href="/app/images/{{i}}">{{i}}</a>
+        {% endif %}
         </span>
         
          {% endfor %}</div>
 </body>
+<script>
+    var search = ()=>{
+       var tag= document.getElementById("tag").value;
+       location.href=`/app/search/${tag}/1`;
+    }
+</script>
 </html>
