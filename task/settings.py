@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zo@jyppz_6%q%#x-s9v_z4gnqtb!%%pifn&sys7zjm@nwi%8fe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["kanishk12.pythonanywhere.com"]
 
 
 # Application definition
@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+STATIC_ROOT="/home/kanishk12/job-test/static"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
