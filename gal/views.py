@@ -34,5 +34,9 @@ def upload(req):
         img.images=image
         img.save()
     return render(req,"status.html")
+def show(req,id):
+    image = models.Image.objects.get(id=id)
+    return render(req,"image.html",{"image":image})
+
 
         
